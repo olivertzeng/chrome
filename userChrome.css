@@ -91,3 +91,267 @@
   margin-left: 2px !important;
   margin-right: 2px !important;
 }
+
+html.private{ background-image: linear-gradient(rgb(56, 25, 128), rgb(12, 4, 30)) }
+
+/* Removes Search Bar From Private Windows */
+.search-handoff-button,
+.search-handoff-button:active,
+.search-handoff-button:enabled:hover:active,
+.search-inner-wrapper {
+    display: none !important;
+}
+
+/* Removes Top Padding From Promotional VPN Message */
+.promo.below-search {
+    padding: 0px 22px 0 !important;
+}
+
+/* Reduce Space Between Firefox Logo & Safety Message */
+.logo-and-wordmark {
+    margin-bottom: 20px !important;
+}
+
+/* Change Promotional VPN Header */
+/* Butcher Original Description Text*/
+.promo-content h1 {
+    text-indent: -9999px;
+    line-height: 0; /* Collapse the original line */
+}
+/* Custom Header Text*/
+.promo-content h1::after {
+    content: "注意！因為您上匿名模式，社會信用點數已歸零！";
+    text-indent: 0;
+    display: block;
+    line-height: initial; /* New content takes up original line height */
+}
+
+/* Change Promotional VPN Details */
+/* Massacre Original Description Text*/
+.promo-content p {
+    text-indent: -9999px;
+    line-height: 0; /* Collapse the original line */
+}
+/* Custom Description Text*/
+.promo-content p::after {
+    content: "處刑時間：明天黎明";
+    text-indent: 0;
+    display: block;
+    line-height: initial; /* New content takes up original line height */
+}
+
+/* Reduce Spacing Between Text & Heading */
+.promo-content p {
+    line-height: 0em !important;
+    margin-top: -3px !important;
+}
+
+/* Terminate VPN Button */
+.promo-cta a {
+    display: none !important;
+}
+
+/* Removes Old Warning Message */
+.info {
+    display: none !important;
+}
+
+.toolbarbutton-badge-stack{
+  border-radius: 30px !important;
+}
+
+#tracking-protection-icon-container{
+  border-radius: 30px !important;
+}
+
+#identity-icon-box{
+  border-radius: 30px !important;
+}
+
+#identity-permission-box{
+  border-radius: 30px !important;
+}
+
+#star-button-box{
+  border-radius: 30px !important;
+}
+
+#reload-button{
+   border-radius: 30px !important;
+}
+
+#notification-popup-box{
+  border-radius: 30px !important;
+}
+
+#back-button:hover{
+  border-radius: 30px !important;
+}
+
+#forward-button:hover{
+  border-radius: 30px !important;
+}
+
+:root{
+    --tab-border-radius: 10px !important;
+}
+
+
+@-moz-document url("chrome://browser/content/places/bookmarksSidebar.xhtml"){
+
+	menupopup {
+
+		--panel-color: rgba(255, 255, 255, 0.800000011920929) !important;
+		--panel-border-color: rgb(48, 48, 48) !important;
+		--panel-background: #101010 !important;
+		--menuitem-hover-background-color: #313131 !important;
+		--menuitem-disabled-hover-background-color: #1f1f1f !important;
+		--menu-color: rgba(255, 255, 255, 0.8) !important;
+		--menu-disabled-color:color-mix(in srgb, #101010 65%, rgb(255, 255, 255))!important;
+		--menu-border-color: var(--panel-separator-color,Field) !important;
+	  }
+
+
+}
+
+
+@-moz-document url("chrome://browser/content/places/historySidebar.xhtml"){
+	menupopup {
+
+		--panel-color: rgba(255, 255, 255, 0.800000011920929) !important;
+		--panel-border-color: rgb(48, 48, 48) !important;
+		--panel-background: #101010 !important;
+		--menuitem-hover-background-color: #313131 !important;
+		--menuitem-disabled-hover-background-color: #1f1f1f !important;
+		--menu-color: rgba(255, 255, 255, 0.8) !important;
+		--menu-disabled-color:color-mix(in srgb, #101010 65%, rgb(255, 255, 255))!important;
+		--menu-border-color: var(--panel-separator-color,Field) !important;
+	  }
+}
+
+@-moz-document url("chrome://browser/content/syncedtabs/sidebar.xhtml"){
+	menupopup {
+
+		--panel-color: rgba(255, 255, 255, 0.800000011920929) !important;
+		--panel-border-color: rgb(48, 48, 48) !important;
+		--panel-background: #101010 !important;
+		--menuitem-hover-background-color: #313131 !important;
+		--menuitem-disabled-hover-background-color: #1f1f1f !important;
+		--menu-color: rgba(255, 255, 255, 0.8) !important;
+		--menu-disabled-color:color-mix(in srgb, #101010 65%, rgb(255, 255, 255))!important;
+		--menu-border-color: var(--panel-separator-color,Field) !important;
+	  }
+
+
+}
+
+@-moz-document url("chrome://browser/content/places/places.xhtml"){
+	menupopup {
+
+		--panel-color: rgba(255, 255, 255, 0.800000011920929) !important;
+		--panel-border-color: rgb(48, 48, 48) !important;
+		--panel-background: #101010 !important;
+		--menuitem-hover-background-color: #313131 !important;
+		--menuitem-disabled-hover-background-color: #1f1f1f !important;
+		--menu-color: rgba(255, 255, 255, 0.8) !important;
+		--menu-disabled-color:color-mix(in srgb, #101010 65%, rgb(255, 255, 255))!important;
+		--menu-border-color: var(--panel-separator-color,Field) !important;
+	  }
+}
+
+@-moz-document url("chrome://browser/content/pageinfo/pageInfo.xhtml"){
+	menupopup {
+
+		--panel-color: rgba(255, 255, 255, 0.800000011920929) !important;
+		--panel-border-color: rgb(48, 48, 48) !important;
+		--panel-background: #101010 !important;
+		--menuitem-hover-background-color: #313131 !important;
+		--menuitem-disabled-hover-background-color: #1f1f1f !important;
+		--menu-color: rgba(255, 255, 255, 0.8) !important;
+		--menu-disabled-color:color-mix(in srgb, #101010 65%, rgb(255, 255, 255))!important;
+		--menu-border-color: var(--panel-separator-color,Field) !important;
+	  }
+}
+
+@-moz-document url("chrome://devtools/content/webconsole/index.html"){
+	menupopup {
+
+		--panel-color: rgba(255, 255, 255, 0.800000011920929) !important;
+		--panel-border-color: rgb(48, 48, 48) !important;
+		--panel-background: #101010 !important;
+		--menuitem-hover-background-color: #313131 !important;
+		--menuitem-disabled-hover-background-color: #1f1f1f !important;
+		--menu-color: rgba(255, 255, 255, 0.8) !important;
+		--menu-disabled-color:color-mix(in srgb, #101010 65%, rgb(255, 255, 255))!important;
+		--menu-border-color: var(--panel-separator-color,Field) !important;
+	  }
+}
+
+@-moz-document url("chrome://devtools/content/framework/toolbox-window.xhtml"){
+	menupopup {
+
+		--panel-color: rgba(255, 255, 255, 0.800000011920929) !important;
+		--panel-border-color: rgb(48, 48, 48) !important;
+		--panel-background: #101010 !important;
+		--menuitem-hover-background-color: #313131 !important;
+		--menuitem-disabled-hover-background-color: #1f1f1f !important;
+		--menu-color: rgba(255, 255, 255, 0.8) !important;
+		--menu-disabled-color:color-mix(in srgb, #101010 65%, rgb(255, 255, 255))!important;
+		--menu-border-color: var(--panel-separator-color,Field) !important;
+	  }
+}
+
+@-moz-document url("chrome://mozapps/content/downloads/unknownContentType.xhtml"){
+	menupopup {
+
+		--panel-color: rgba(255, 255, 255, 0.800000011920929) !important;
+		--panel-border-color: rgb(48, 48, 48) !important;
+		--panel-background: #101010 !important;
+		--menuitem-hover-background-color: #313131 !important;
+		--menuitem-disabled-hover-background-color: #1f1f1f !important;
+		--menu-color: rgba(255, 255, 255, 0.8) !important;
+		--menu-disabled-color:color-mix(in srgb, #101010 65%, rgb(255, 255, 255))!important;
+		--menu-border-color: var(--panel-separator-color,Field) !important;
+	  }
+
+	  #openHandler {
+		-moz-appearance: none !important;
+		background: #101010 !important;
+		color: rgba(255, 255, 255, 0.800000011920929) !important;
+		border-radius: 4px !important;
+		transition: background 300ms cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+
+	}
+
+	#openHandler:hover{
+		background: #313131 !important;
+
+	}
+
+	#openHandlerBox{
+		-moz-appearance: none !important;
+		background: #101010 !important;
+		color: rgba(255, 255, 255, 0.800000011920929) !important;
+		border: 1px solid rgb(48, 48, 48) !important;
+		border-radius: 4px !important;
+	}
+
+
+
+}
+
+@-moz-document url("chrome://global/content/appPicker.xhtml") {
+
+	#app-picker-listbox {
+		border-radius: 4px !important;
+	  }
+
+	#app-picker-listbox > richlistitem {
+		border-radius: 4px !important;
+	  }
+
+	richlistbox {
+		border-radius: 4px !important;
+	  }
+
+}
