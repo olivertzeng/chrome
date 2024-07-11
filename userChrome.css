@@ -194,6 +194,28 @@ html.private{ background-image: linear-gradient(rgb(56, 25, 128), rgb(12, 4, 30)
 
 :root{
     --tab-border-radius: 10px !important;
+  --conf-tab-size: 20px;
+  --conf-border-radius: 12px;
+
+  --tab-min-height: var(--conf-tab-size) !important;
+  --tab-max-height: var(--conf-tab-size) !important;
+
+  --toolbarbutton-border-radius: var(--conf-border-radius) !important;
+  --tab-border-radius: var(--conf-border-radius) !important;
+}
+
+.tab-icon-sound-label.tab-icon-sound-playing-label {
+  display: none;
+}
+
+.titlebar-spacer {
+  display: none;
+}
+
+.tab-text.tab-label {
+  font-size: 14px;
+  font-weight: bold;
+  font-family: Cascadia Code;
 }
 
 
