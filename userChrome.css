@@ -424,3 +424,13 @@
 :is(panelview, #widget-overflow-fixed-list) .toolbaritem-combined-buttons {
 	margin: 0px !important;
 }
+
+:root {
+	/* Change to any color you want */
+	--firefoxcss-colored-sound-tab: #5960c482 !important;
+}
+
+#tabbrowser-tabs .tabbrowser-tab:is([soundplaying]) .tab-background:not([selected]) {
+	background-color: var(--firefoxcss-colored-sound-tab) !important;
+	transition: background-color 500ms ease !important;
+}
