@@ -58,6 +58,24 @@
 }
 
 @media (prefers-color-scheme: light) {
+	:root {
+		/* ----- Private Page Colors ----- */
+		--firefoxcss-private-search-bg-color: hsla(276, 20%, 88%, 0.55);
+		--firefoxcss-private-search-top-border: hsla(0, 0%, 100%, 0.45);
+		--firefoxcss-private-search-fill: hsl(275, 20%, 65%);
+
+		--firefoxcss-private-search-hover: hsla(276, 20%, 84%, 0.50);
+		--firefoxcss-private-search-border-hover: hsla(0, 0%, 100%, 0.55);
+		--firefoxcss-private-search-hover-fill: hsl(275, 20%, 55%);
+
+		--firefoxcss-private-search-text: var(--firefoxcss-private-search-fill);
+		--firefoxcss-private-search-text-hover: var(--firefoxcss-private-search-hover-fill);
+		--firefoxcss-private-search-caret: hsl(276, 20%, 40%);
+
+		--firefoxcss-private-search-box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.015),
+			0 2px 2px hsl(0deg 0% 0% / 0.015), 0 4px 4px hsl(0deg 0% 0% / 0.015),
+			0 6px 6px hsl(0deg 0% 0% / 0.015), 0 12px 12px hsl(0deg 0% 0% / 0.035);
+	}
 
 	/* newtab plus icon color */
 	#tabs-newtab-button .toolbarbutton-icon {
@@ -299,9 +317,6 @@
 		border: 1px solid rgb(48, 48, 48) !important;
 		border-radius: 4px !important;
 	}
-
-
-
 }
 
 @-moz-document url("chrome://global/content/appPicker.xhtml") {
@@ -383,11 +398,6 @@
 	[place="panel"])>#zoom-controls,
 :is(panelview, #widget-overflow-fixed-list) .toolbaritem-combined-buttons {
 	margin: 0px !important;
-}
-
-:root {
-	/* Change to any color you want */
-	--firefoxcss-colored-sound-tab: #5960c482 !important;
 }
 
 #tabbrowser-tabs .tabbrowser-tab:is([soundplaying]) .tab-background:not([selected]) {
@@ -631,6 +641,7 @@
 }
 
 :root {
+	--firefoxcss-colored-sound-tab: #5960c482 !important;
 	--firefoxcss-item-bg-color: hsla(240, 2%, 45%, 0.4) !important;
 	--firefoxcss-item-hover-bg-color: hsl(240, 2%, 55%, 0.4) !important;
 	--firefoxcss-settings-wheel-color: hsla(240, 20%, 80%, 0.6) !important;
