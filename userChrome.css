@@ -396,12 +396,6 @@
 	margin: 0px !important;
 }
 
-#tabbrowser-tabs .tabbrowser-tab:is([soundplaying]) .tab-background:not([selected]) {
-	background-color: var(--firefoxcss-colored-sound-tab) !important;
-	transition: background-color 500ms ease !important;
-}
-
-
 :root[privatebrowsingmode="temporary"] {
 	#tabbrowser-tabs .tabbrowser-tab .tab-stack .tab-content {
 		filter: blur(4px) !important;
