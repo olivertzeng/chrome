@@ -388,10 +388,6 @@
 	border-bottom: 1px solid #aeaeae33 !important;
 }
 
-#unified-extensions-view .unified-extensions-list {
-	/*     border-top: 1px solid #aeaeae33 !important; */
-}
-
 #wrapper-edit-controls:is([place="palette"],
 	[place="panel"])>#edit-controls,
 #wrapper-zoom-controls:is([place="palette"],
@@ -492,86 +488,6 @@
 	html.private {
 		background-image: linear-gradient(rgb(56, 25, 128), rgb(12, 4, 30))
 	}
-
-	/* Removes Search Bar From Private Windows */
-	.search-handoff-button,
-	.search-handoff-button:active,
-	.search-handoff-button:enabled:hover:active,
-	.search-inner-wrapper {
-		display: none !important;
-	}
-
-	/* Removes Top Padding From Promotional VPN Message */
-	.promo.below-search {
-		padding: 0px 22px 0 !important;
-	}
-
-	/* Reduce Space Between Firefox Logo & Safety Message */
-	.logo-and-wordmark {
-		margin-bottom: 20px !important;
-	}
-
-	/* Change Promotional VPN Header */
-	/* Butcher Original Description Text*/
-	.promo-content h1 {
-		text-indent: -9999px;
-		line-height: 0;
-		/* Collapse the original line */
-	}
-
-	/* Custom Header Text*/
-	.promo-content h1::after {
-		content: "注意！因為您上匿名模式，社會信用點數已歸零！";
-		text-indent: 0;
-		display: block;
-		line-height: initial;
-		/* New content takes up original line height */
-	}
-
-	/* Change Promotional VPN Details */
-	/* Massacre Original Description Text*/
-	.promo-content p {
-		text-indent: -9999px;
-		line-height: 0;
-		/* Collapse the original line */
-	}
-
-	/* Custom Description Text*/
-	.promo-content p::after {
-		content: "處刑時間：明天黎明";
-		text-indent: 0;
-		display: block;
-		line-height: initial;
-		/* New content takes up original line height */
-	}
-
-	/* Reduce Spacing Between Text & Heading */
-	.promo-content p {
-		line-height: 0em !important;
-		margin-top: -3px !important;
-	}
-
-	/* Terminate VPN Button */
-	.promo-cta a {
-		display: none !important;
-	}
-
-	/* Removes Old Warning Message */
-	.info {
-		display: none !important;
-	}
-
-	body {
-		background-color: var(--firefoxcss-main-bg-color) !important;
-		background-size: auto;
-		background-size: cover !important;
-	}
-
-	/* html.private {
-		background-color: #1e1e1e80 !important;
-		background-image: url(ASSETS/icons/.jpg) !important ;
-		background-size: cover  !important;
-	} */
 
 	#search-handoff-button {
 		appearance: none !important;
