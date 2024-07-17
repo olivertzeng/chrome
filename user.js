@@ -369,3 +369,33 @@ user_pref("mousewheel.transaction.timeout",                  1500);            /
 user_pref("toolkit.scrollbox.horizontalScrollDistance",         4);            ///        5
 user_pref("toolkit.scrollbox.verticalScrollDistance",           3);            ///        3
 */
+
+// Fastfox
+user_pref("content.notify.interval", 100000); // (.10s); default=120000 (.12s)
+user_pref("gfx.canvas.accelerated.cache-items", 4096); // default=2048; alt=8192
+user_pref("gfx.canvas.accelerated.cache-size", 512); // default=256; alt=1024
+user_pref("gfx.content.skia-font-cache-size", 20); // default=5; Chrome=20
+user_pref("browser.cache.jsbc_compression_level", 3);
+user_pref("media.memory_cache_max_size", 65536); // default=8192; AF=65536; alt=131072
+user_pref("media.cache_readahead_limit", 7200); // 120 min; default=60; stop reading ahead when our buffered data is this many seconds ahead of the current playback
+user_pref("media.cache_resume_threshold", 3600); // 60 min; default=30; when a network connection is suspended, don't resume it until the amount of buffered data falls below this threshold
+user_pref("image.mem.decode_bytes_at_a_time", 32768); // default=16384; alt=65536; chunk size for calls to the image decoders
+user_pref("network.http.max-connections", 1800); // default=900
+user_pref("network.http.max-persistent-connections-per-server", 10); // default=6; download connections; anything above 10 is excessive
+user_pref("network.http.max-urgent-start-excessive-connections-per-host", 5); // default=3
+user_pref("network.http.pacing.requests.enabled", false);
+user_pref("network.dnsCacheExpiration", 3600); // keep entries for 1 hour
+user_pref("network.ssl_tokens_cache_capacity", 10240); // default=2048; more TLS token caching (fast reconnects)
+user_pref("network.dns.disablePrefetch", true);
+user_pref("network.dns.disablePrefetchFromHTTPS", true); // [FF127+ false]
+user_pref("network.prefetch-next", false);
+user_pref("network.predictor.enabled", false);
+user_pref("layout.css.grid-template-masonry-value.enabled", true);
+user_pref("dom.enable_web_task_scheduling", true);
+user_pref("dom.security.sanitizer.enabled", true);
+
+// Smoothfox(60hz+ display)
+user_pref("apz.overscroll.enabled", true); // DEFAULT NON-LINUX
+user_pref("general.smoothScroll", true); // DEFAULT
+user_pref("mousewheel.default.delta_multiplier_y", 275); // 250-400; adjust this number to your liking
+user_pref("general.smoothScroll.msdPhysics.enabled", false); // [FF122+ Nightly]

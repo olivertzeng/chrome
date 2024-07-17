@@ -434,3 +434,25 @@
 	background-color: var(--firefoxcss-colored-sound-tab) !important;
 	transition: background-color 500ms ease !important;
 }
+
+@-moz-document private {
+	#tabbrowser-tabs .tabbrowser-tab .tab-stack .tab-content {
+		filter: blur(4px) !important;
+		transition: filter 200ms linear !important;
+	}
+
+	#tabbrowser-tabs .tabbrowser-tab:hover .tab-stack .tab-content {
+		filter: blur(0px) !important;
+	}
+
+	/* ----- Blur the email address in hamburger menu ----- */
+	#appMenu-popup #appMenu-header-description {
+		filter: blur(4px) !important;
+		transition: filter 350ms ease-out !important;
+		transition-delay: 250ms !important;
+	}
+
+	#appMenu-popup #appMenu-fxa-label2:hover #appMenu-header-description {
+		filter: blur(0px) !important;
+	}
+}
