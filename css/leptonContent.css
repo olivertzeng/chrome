@@ -2251,6 +2251,14 @@
       background-color: var(--in-content-box-background-odd);
     }
   }
+  @-moz-document url-prefix("about:preferences") {
+    .privacy-extra-information > .custom-option:not(:first-child) {
+      margin-block: 2px !important; /* Original: 10px */
+    }
+    .extra-information-label:not(:first-child) {
+      margin-top: 4px !important; /* Original: 19px */
+    }
+  }
   /*= about:processes ==========================================================*/
   @-moz-document url-prefix("about:processes") {
     td.type.favicon[style*='background-image: url("chrome://global/skin/icons/link.svg");']
@@ -2258,7 +2266,13 @@
       background-image: url("../icons/link.svg") !important;
     }
     .profiler-icon {
-      background: url("../icons/performance.svg") no-repeat center !important;
+      cursor: pointer;
+      background-image: url("../icons/performance.svg") no-repeat center !important;
+    }
+    @supports not -moz-bool-pref("userChrome.rounding.square_button") {
+      .profiler-icon {
+        border-radius: 8px !important;
+      }
     }
   }
   @-moz-document url-prefix("about:profiling") {
@@ -5973,13 +5987,29 @@
   }
 }
 @media (-moz-bool-pref: "userContent.page.proton") {
+  @-moz-document url-prefix("about:preferences") {
+    .privacy-extra-information > .custom-option:not(:first-child) {
+      margin-block: 2px !important; /* Original: 10px */
+    }
+    .extra-information-label:not(:first-child) {
+      margin-top: 4px !important; /* Original: 19px */
+    }
+  }
+}
+@media (-moz-bool-pref: "userContent.page.proton") {
   @-moz-document url-prefix("about:processes") {
     td.type.favicon[style*='background-image: url("chrome://global/skin/icons/link.svg");']
     {
       background-image: url("../icons/link.svg") !important;
     }
     .profiler-icon {
-      background: url("../icons/performance.svg") no-repeat center !important;
+      cursor: pointer;
+      background-image: url("../icons/performance.svg") no-repeat center !important;
+    }
+    @media (-moz-bool-pref: "userContent.page.proton") and (not (-moz-bool-pref: "userChrome.rounding.square_button")) {
+      .profiler-icon {
+        border-radius: 8px !important;
+      }
     }
   }
 }
