@@ -579,8 +579,23 @@
 	background-color: #555757 !important;
 }
 
-@-moz-document url-prefix(about:home), url-prefix(about:newtab) {
-	.logo {
-		background: url("https://cdn.neowin.com/news/images/uploaded/2021/11/1635927014_librewolf_browser.jpg") no-repeat center;
-	}
+@-moz-document url(about:home), url(about:newtab), url(about:privatebrowsing){
+
+.click-target-container *,
+.top-sites-list * {
+	color: #fff !important;
+	text-shadow: 2px 2px 2px #222 !important;
+}
+
+body::before {
+	content: "";
+	z-index: -1;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: #f9a no-repeat url(icons/librewolf.svg) center;
+	background-size: cover;
+	width: 100vw;
+	height: 100vh;
+}
 }
