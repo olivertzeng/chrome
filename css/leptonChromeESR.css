@@ -2223,6 +2223,15 @@
   .notification-button:hover:active {
     background-color: var(--button-active-bgcolor) !important;
   }
+  .notification-button.primary {
+    background-color: var(--button-primary-bgcolor) !important;
+  }
+  .notification-button.primary:hover {
+    background-color: var(--button-primary-hover-bgcolor) !important;
+  }
+  .notification-button.primary:hover:active {
+    background-color: var(--button-primary-active-bgcolor) !important;
+  }
   html|button.ghost-button:not(.semi-transparent):enabled:hover {
     background-color: var(--button-hover-bgcolor) !important;
   }
@@ -2259,8 +2268,8 @@
   #editBMPanel_tagsSelector > richlistitem[selected="true"] {
     background-color: var(--button-active-bgcolor, color-mix(in srgb, currentColor 30%, transparent)) !important;
   }
-  #editBMPanel_namePicker,
-  #editBMPanel_tagsField {
+  #editBookmarkPanel #editBMPanel_namePicker,
+  #editBookmarkPanel #editBMPanel_tagsField {
     --input-bgcolor: var(--arrowpanel-background, Field);
     --input-color: var(--arrowpanel-color, FieldText);
   }
@@ -10256,6 +10265,9 @@
       position: fixed !important; /* Needed for content to take up entire height */
       z-index: 1000 !important; /* Puts the UI above the content */
     }
+    :root[sizemode="fullscreen"] #navigator-toolbox:is(:hover, :focus-within) {
+      margin-top: 0 !important;
+    }
     :root[sizemode="fullscreen"] :-moz-any(#navigator-toolbox, #titlebar, #nav-bar, #PersonalToolbar) {
       width: 100%; /* Makes the UI take up the entire width */
     }
@@ -10268,8 +10280,8 @@
   }
 }
 @supports -moz-bool-pref("userChrome.fullscreen.show_bookmarkbar") {
-  :root:not([sizemode="fullscreen"]) #PersonalToolbar[initialized="true"]:not([collapsed="true"]),
-  :root[sizemode="fullscreen"] #PersonalToolbar[initialized="true"] {
+  :root:not([sizemode="fullscreen"]) #PersonalToolbar[initialized]:not([collapsed="true"]),
+  :root[sizemode="fullscreen"] #PersonalToolbar[initialized] {
     visibility: unset !important; /* Makes the bookmarks toolbar visible if enabled */
   }
 }
@@ -11888,6 +11900,21 @@
     .sendToDevice-device.subviewbutton.sync-menuitem.sendtab-target:not([clientType]) {
       list-style-image: url("chrome://global/skin/icons/settings.svg");
     }
+    .sendToDevice-device[clientType="phone"] {
+      list-style-image: url("../icons/device-phone.svg") !important;
+    }
+    .sendToDevice-device[clientType="tablet"] {
+      list-style-image: url("../icons/device-tablet.svg") !important;
+    }
+    .sendToDevice-device[clientType="desktop"] {
+      list-style-image: url("../icons/device-desktop.svg") !important;
+    }
+    .sendToDevice-device[clientType="tv"] {
+      list-style-image: url("../icons/device-tv.svg") !important;
+    }
+    .sendToDevice-device[clientType="vr"] {
+      list-style-image: url("../icons/device-vr.svg") !important;
+    }
     /*= Panel - Bookmark =========================================================*/
     #panelMenuBookmarkThisPage {
       list-style-image: url("chrome://browser/skin/bookmark-hollow.svg");
@@ -12094,6 +12121,9 @@
       fill: currentColor;
       margin-inline-end: 1em;
     }
+    #protections-popup-report-broken-site-button {
+      list-style-image: url("chrome://global/skin/icons/lightbulb.svg");
+    }
     #protections-popup-settings-button > .protections-popup-settings-icon,
     #protections-popup-multiView .panel-subview-footer-button {
       list-style-image: url("chrome://global/skin/icons/settings.svg");
@@ -12223,7 +12253,8 @@
         #context-sendpagetodevice-popup,
         #context-sendlinktodevice-popup,
         #frame > menupopup,
-        #spell-dictionaries-menu
+        #spell-dictionaries-menu,
+        #context-ask-chat > menupopup
       )
       > menuitem:not([type="checkbox"][checked="true"], [type="radio"]),
     .openintabs-menuitem,
@@ -12308,7 +12339,8 @@
         #context-sendpagetodevice-popup,
         #context-sendlinktodevice-popup,
         #frame > menupopup,
-        #spell-dictionaries-menu
+        #spell-dictionaries-menu,
+        #context-ask-chat > menupopup
       )
       > menuitem:not([type="checkbox"][checked="true"], [type="radio"]),
     .openintabs-menuitem,
@@ -12405,7 +12437,8 @@
           #context-sendpagetodevice-popup,
           #context-sendlinktodevice-popup,
           #frame > menupopup,
-          #spell-dictionaries-menu
+          #spell-dictionaries-menu,
+          #context-ask-chat > menupopup
         )
         > menuitem:not([type="checkbox"][checked="true"], [type="radio"]),
       .openintabs-menuitem,
@@ -12481,7 +12514,8 @@
               #context-sendpagetodevice-popup,
               #context-sendlinktodevice-popup,
               #frame > menupopup,
-              #spell-dictionaries-menu
+              #spell-dictionaries-menu,
+              #context-ask-chat > menupopup
             )
             > menuitem:not([type="checkbox"][checked="true"], [type="radio"]),
           .openintabs-menuitem,
@@ -12665,7 +12699,8 @@
           #context-sendpagetodevice-popup,
           #context-sendlinktodevice-popup,
           #frame > menupopup,
-          #spell-dictionaries-menu
+          #spell-dictionaries-menu,
+          #context-ask-chat > menupopup
         )
         > menuitem:not([type="checkbox"][checked="true"], [type="radio"]),
       .openintabs-menuitem,
@@ -13413,6 +13448,35 @@
           --menuitem-image: url("chrome://browser/skin/bookmark.svg");
         }
       }
+      /*= context-ask-chat =========================================================*/
+      #ask-chat-shortcuts .toolbarbutton-icon {
+        order: -1;
+        margin-inline-end: var(--arrowpanel-menuitem-margin-inline) !important;
+      }
+      #ask-chat-shortcuts .subviewbutton:nth-child(1) {
+        list-style-image: url("../icons/apps-list-detail.svg");
+      }
+      #ask-chat-shortcuts .subviewbutton:nth-child(2) {
+        list-style-image: url("../icons/code-text.svg");
+      }
+      #ask-chat-shortcuts .subviewbutton:nth-child(3) {
+        list-style-image: url("../icons/tetris-app.svg");
+      }
+      #ask-chat-shortcuts .subviewbutton:nth-child(4) {
+        list-style-image: url("../icons/arrow-up-exclamation.svg");
+      }
+      #context-ask-chat menuitem:nth-child(1) {
+        --menuitem-image: url("../icons/apps-list-detail.svg");
+      }
+      #context-ask-chat menuitem:nth-child(2) {
+        --menuitem-image: url("../icons/code-text.svg");
+      }
+      #context-ask-chat menuitem:nth-child(3) {
+        --menuitem-image: url("../icons/tetris-app.svg");
+      }
+      #context-ask-chat menuitem:nth-child(4) {
+        --menuitem-image: url("../icons/arrow-up-exclamation.svg");
+      }
       /*= main-context-menu-frame ==================================================*/
       #context-showonlythisframe {
         --menuitem-image: url("../icons/eye-show.svg");
@@ -13830,6 +13894,9 @@
         --menuitem-image: url("../icons/send.svg");
       }
       /*= urlbarView-result-menu ===================================================*/
+      .urlbarView-result-menuitem[data-command="trendingblock"] {
+        --menuitem-image: url("../icons/eye-hide.svg");
+      }
       .urlbarView-result-menuitem[data-command="dismiss"] {
         --menuitem-image: url("chrome://global/skin/icons/delete.svg");
       }
@@ -14272,6 +14339,9 @@
     }
     menuitem.privatetab-icon {
       --menuitem-image: url("../icons/private-favicon.svg");
+    }
+    #sidebar_waterfox_net-menuitem-_openAllBookmarksWithStructure {
+      --menuitem-image: url("../icons/organization-horizontal.svg");
     }
   }
   /*= Tor Browser ==============================================================*/
