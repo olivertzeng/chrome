@@ -2833,7 +2833,7 @@
       fill: currentColor !important;
       color: var(--in-content-primary-button-text-color) !important;
       background-color: var(--in-content-primary-button-background) !important;
-      background-image: url("chrome://global/skin/icons/radio.svg") !important;
+      background-image: url("../icons/radio.svg") !important;
       border-color: transparent !important;
       /* Style the button also when printing with "Print Backgrounds" unchecked */
       color-adjust: exact !important;
@@ -7236,6 +7236,9 @@
 /** Tab UI ********************************************************************/
 /*= Tab - Connect to window ==============================================*/
 @supports -moz-bool-pref("userChrome.tab.connect_to_window") {
+  #tabbrowser-tabs[orient="horizontal"] {
+    min-height: unset !important; /* Original: var(--tabstrip-min-height) */
+  }
   #tabbrowser-tabs[orient="vertical"] {
     --uc-tab-border-bottom-radius: var(--tab-border-radius);
   }
@@ -10279,19 +10282,24 @@
 /** Fullscreen - Overlap toolbar **********************************************/
 @supports -moz-bool-pref("userChrome.fullscreen.overlap") {
   @supports -moz-bool-pref("browser.fullscreen.autohide") {
-    :root[sizemode="fullscreen"] #navigator-toolbox {
+    :root[sizemode="fullscreen"]:not([inDOMFullscreen="true"]) #navigator-toolbox {
       position: fixed !important; /* Needed for content to take up entire height */
       z-index: 1000 !important; /* Puts the UI above the content */
     }
-    :root[sizemode="fullscreen"] #navigator-toolbox:is(:hover, :focus-within) {
+    :root[sizemode="fullscreen"]:not([inDOMFullscreen="true"]) #navigator-toolbox:is(:hover, :focus-within) {
       margin-top: 0 !important;
     }
-    :root[sizemode="fullscreen"] :-moz-any(#navigator-toolbox, #titlebar, #nav-bar, #PersonalToolbar) {
+    :root[sizemode="fullscreen"]:not([inDOMFullscreen="true"])
+      :-moz-any(#navigator-toolbox, #titlebar, #nav-bar, #PersonalToolbar) {
       width: 100%; /* Makes the UI take up the entire width */
     }
     @media (-moz-gtk-csd-available) {
       /* Fix transparent background */
-      :root[tabsintitlebar][sizemode="fullscreen"]:is(:not([lwtheme]), :not(:-moz-lwtheme)) #TabsToolbar {
+      :root[tabsintitlebar][sizemode="fullscreen"]:not([inDOMFullscreen="true"]):is(
+          :not([lwtheme]),
+          :not(:-moz-lwtheme)
+        )
+        #TabsToolbar {
         appearance: auto !important;
       }
     }
