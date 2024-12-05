@@ -4036,12 +4036,18 @@
       transition: all 0.3s var(--animation-easing-function) !important;
     }
     /*- URL / Search Bar -------------------------------------------------------*/
-    #urlbar-background,
+    #urlbar-background {
+      transition: border-color 1s var(--animation-easing-function),
+        background-color 0.5s var(--animation-easing-function) !important;
+    }
+    #urlbar-background:hover {
+      transition: border-color 0.5s var(--animation-easing-function),
+        background-color 0.5s var(--animation-easing-function) !important;
+    }
     #searchbar {
       transition: border-color 1s var(--animation-easing-function),
         background-color 1.5s var(--animation-easing-function) !important;
     }
-    #urlbar-background:hover,
     #searchbar:hover {
       transition: border-color 0.5s var(--animation-easing-function),
         background-color 1s var(--animation-easing-function) !important;
@@ -4753,11 +4759,6 @@
     :root:not([uidensity="compact"]) #urlbar[breakout][breakout-extend],
     :root:not([uidensity="compact"]) #urlbar[breakout][breakout-extend-disabled][open] {
       height: auto !important;
-    }
-    :root[uidensity="touch"] #urlbar[breakout] {
-      top: calc(
-        (var(--urlbar-toolbar-height, var(--urlbar-container-height)) - var(--urlbar-height)) / 2 + 1px
-      ) !important;
     }
     /* spread menu */
     :root:not([uidensity]) .urlbarView-row {
@@ -10293,6 +10294,9 @@
       :-moz-any(#navigator-toolbox, #titlebar, #nav-bar, #PersonalToolbar) {
       width: 100%; /* Makes the UI take up the entire width */
     }
+    :root[sizemode="fullscreen"]:not([inDOMFullscreen="true"]) #urlbar:popover-open {
+      position: fixed !important;
+    }
     @media (-moz-gtk-csd-available) {
       /* Fix transparent background */
       :root[tabsintitlebar][sizemode="fullscreen"]:not([inDOMFullscreen="true"]):is(
@@ -10905,11 +10909,17 @@
       @supports not -moz-bool-pref("userChrome.tabbar.one_liner") {
         #nav-bar:not([customizing]) {
           margin-bottom: var(--uc-navbar-hide-height);
+        }
+        #nav-bar:not([customizing]),
+        #nav-bar:not([customizing]) #urlbar {
           opacity: 0;
           will-change: margin-bottom, opacity;
         }
         #navigator-toolbox:is(:hover, :focus-within) #nav-bar:not([customizing]) {
           margin-bottom: 0;
+        }
+        #navigator-toolbox:is(:hover, :focus-within) #nav-bar:not([customizing]),
+        #navigator-toolbox:is(:hover, :focus-within) #nav-bar:not([customizing]) #urlbar {
           opacity: 1;
         }
       }
@@ -10918,11 +10928,17 @@
           @media screen and (max-width: 1100px) {
             #nav-bar:not([customizing]) {
               margin-bottom: var(--uc-navbar-hide-height);
+            }
+            #nav-bar:not([customizing]),
+            #nav-bar:not([customizing]) #urlbar {
               opacity: 0;
               will-change: margin-bottom, opacity;
             }
             #navigator-toolbox:is(:hover, :focus-within) #nav-bar:not([customizing]) {
               margin-bottom: 0;
+            }
+            #navigator-toolbox:is(:hover, :focus-within) #nav-bar:not([customizing]),
+            #navigator-toolbox:is(:hover, :focus-within) #nav-bar:not([customizing]) #urlbar {
               opacity: 1;
             }
           }
@@ -10946,7 +10962,12 @@
             var(--ext-theme-background-transition) !important;
         }
       }
-      #navigator-toolbox:is(:hover, :focus-within) #nav-bar:not([customizing]) {
+      #nav-bar:not([customizing]) #urlbar {
+        transition: opacity var(--uc-autohide-toolbar-speed) var(--animation-easing-function)
+          var(--uc-autohide-toolbar-delay) !important;
+      }
+      #navigator-toolbox:is(:hover, :focus-within) #nav-bar:not([customizing]),
+      #navigator-toolbox:is(:hover, :focus-within) #nav-bar:not([customizing]) #urlbar {
         transition-delay: 0s !important;
       }
     }
@@ -12095,6 +12116,9 @@
     #allTabsMenu-searchTabs {
       list-style-image: url("chrome://global/skin/icons/search-glass.svg");
     }
+    #allTabsMenu-syncedTabs {
+      list-style-image: url("../icons/synced-tabs.svg");
+    }
     #allTabsMenu-closeDuplicateTabs {
       list-style-image: var(--uc-tab-close-duplicate-icon);
     }
@@ -12211,6 +12235,22 @@
     }
     #sidebarMenu-popup > *:is(menuitem)[data-l10n-id="sidebar-menu-close"] {
       --menuitem-image: url("chrome://global/skin/icons/close.svg");
+    }
+    /*= chrome://browser/content/syncedtabs/sidebar.xhtml ========================*/
+    .item.client[clientType="phone"] > .item-title-container > .item-icon-container {
+      background-image: url("../icons/device-phone.svg") !important;
+    }
+    .item.client[clientType="tablet"] > .item-title-container > .item-icon-container {
+      background-image: url("../icons/device-tablet.svg") !important;
+    }
+    .item.client[clientType="desktop"] > .item-title-container > .item-icon-container {
+      background-image: url("../icons/device-desktop.svg") !important;
+    }
+    .item.client[clientType="tv"] > .item-title-container > .item-icon-container {
+      background-image: url("../icons/device-tv.svg") !important;
+    }
+    .item.client[clientType="vr"] > .item-title-container > .item-icon-container {
+      background-image: url("../icons/device-vr.svg") !important;
     }
     /*= unified-extensions-view ===================================================*/
     #unified-extensions-manage-extensions {
