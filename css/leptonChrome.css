@@ -802,16 +802,24 @@
     /* Tab Bar */
     :root:is([tabsintitlebar], [customtitlebar]):not(:-moz-window-inactive):is(:not([lwtheme]), :not(:-moz-lwtheme))
       .titlebar-color,
+    :root:is([tabsintitlebar], [customtitlebar]):not(:-moz-window-inactive):is(:not([lwtheme]), :not(:-moz-lwtheme))
+      .browser-titlebar,
     :root:is([tabsintitlebar], [customtitlebar])[lwt-default-theme-in-dark-mode]:not(:-moz-window-inactive)
-      .titlebar-color {
+      .titlebar-color,
+    :root:is([tabsintitlebar], [customtitlebar])[lwt-default-theme-in-dark-mode]:not(:-moz-window-inactive)
+      .browser-titlebar {
       color: AccentColorText;
       background-color: AccentColor;
     }
     @supports -moz-bool-pref("userChrome.compatibility.accent_color") {
       :root:is([tabsintitlebar], [customtitlebar]):not(:-moz-window-inactive):is(:not([lwtheme]), :not(:-moz-lwtheme))
         .titlebar-color,
+      :root:is([tabsintitlebar], [customtitlebar]):not(:-moz-window-inactive):is(:not([lwtheme]), :not(:-moz-lwtheme))
+        .browser-titlebar,
       :root:is([tabsintitlebar], [customtitlebar])[lwt-default-theme-in-dark-mode]:not(:-moz-window-inactive)
-        .titlebar-color {
+        .titlebar-color,
+      :root:is([tabsintitlebar], [customtitlebar])[lwt-default-theme-in-dark-mode]:not(:-moz-window-inactive)
+        .browser-titlebar {
         color: -moz-accent-color-foreground;
         background-color: -moz-accent-color;
       }
@@ -5478,7 +5486,7 @@
           :root[sizemode="maximized"]:is([tabsintitlebar], [customtitlebar]) #titlebar {
             appearance: none !important;
           }
-          .browser-toolbar:not(.titlebar-color) {
+          .browser-toolbar:not(.titlebar-color):not(.browser-titlebar) {
             background-clip: border-box !important;
           }
         }
@@ -5642,7 +5650,7 @@
             :root[sizemode="maximized"]:is([tabsintitlebar], [customtitlebar]) #titlebar {
               appearance: none !important;
             }
-            .browser-toolbar:not(.titlebar-color) {
+            .browser-toolbar:not(.titlebar-color):not(.browser-titlebar) {
               background-clip: border-box !important;
             }
           }
@@ -5803,7 +5811,7 @@
             :root[sizemode="maximized"]:is([tabsintitlebar], [customtitlebar]) #titlebar {
               appearance: none !important;
             }
-            .browser-toolbar:not(.titlebar-color) {
+            .browser-toolbar:not(.titlebar-color):not(.browser-titlebar) {
               background-clip: border-box !important;
             }
           }
@@ -5973,7 +5981,7 @@
             :root[sizemode="maximized"]:is([tabsintitlebar], [customtitlebar]) #titlebar {
               appearance: none !important;
             }
-            .browser-toolbar:not(.titlebar-color) {
+            .browser-toolbar:not(.titlebar-color):not(.browser-titlebar) {
               background-clip: border-box !important;
             }
           }
@@ -6150,7 +6158,7 @@
               :root[sizemode="maximized"]:is([tabsintitlebar], [customtitlebar]) #titlebar {
                 appearance: none !important;
               }
-              .browser-toolbar:not(.titlebar-color) {
+              .browser-toolbar:not(.titlebar-color):not(.browser-titlebar) {
                 background-clip: border-box !important;
               }
             }
@@ -6313,7 +6321,7 @@
               :root[sizemode="maximized"]:is([tabsintitlebar], [customtitlebar]) #titlebar {
                 appearance: none !important;
               }
-              .browser-toolbar:not(.titlebar-color) {
+              .browser-toolbar:not(.titlebar-color):not(.browser-titlebar) {
                 background-clip: border-box !important;
               }
             }
@@ -8860,7 +8868,7 @@
       opacity: 0;
       visibility: hidden;
     }
-    :root:has(#sidebar-box[positionend="true"]) #nav-bar {
+    :root:has(#sidebar-box[positionend]) #nav-bar {
       right: 0;
     }
   }
@@ -8923,7 +8931,7 @@
     position: absolute;
     height: 100%;
   }
-  :root[customizing="true"] #browser[collapsed="true"] #sidebar-box[positionend="true"] {
+  :root[customizing="true"] #browser[collapsed="true"] #sidebar-box[positionend] {
     right: 0;
   }
   :root[customizing="true"] #customization-container {
@@ -8936,10 +8944,10 @@
       --uc-customization-conatiner-margin: calc(var(--uc-navbar-height-default) - var(--uc-tabbar-height-default));
     }
   }
-  :root[customizing="true"]:has(#sidebar-box:not([positionend="true"])) #customization-container {
+  :root[customizing="true"]:has(#sidebar-box:not([positionend])) #customization-container {
     margin-inline-start: var(--uc-sidebar-activate-width);
   }
-  :root[customizing="true"]:has(#sidebar-box[positionend="true"]) #customization-container {
+  :root[customizing="true"]:has(#sidebar-box[positionend]) #customization-container {
     margin-inline-end: var(--uc-sidebar-activate-width);
   }
   :root[customizing="true"] #customization-palette-container,
@@ -9255,7 +9263,7 @@
     position: relative !important;
     box-shadow: var(--uc-sidebar-shadow-position) 0px 15px -10px var(--uc-sidebar-shadow-color);
   }
-  #sidebar-box[positionend="true"] {
+  #sidebar-box[positionend] {
     --uc-sidebar-shadow-position: calc(-1 * var(--uc-sidebar-shadow-position-default));
   }
   #sidebar {
@@ -9266,7 +9274,7 @@
   }
 }
 @supports -moz-bool-pref("userChrome.sidebar.overlap") {
-  #sidebar-box[positionend="true"] {
+  #sidebar-box[positionend] {
     direction: rtl;
   }
   #sidebar-header,
@@ -10825,18 +10833,18 @@
       min-width: var(--uc-sidebar-activate-width) !important;
       max-width: var(--uc-sidebar-activate-width) !important;
     }
-    :root[inFullscreen="true"] #sidebar-box:not([positionend="true"]) {
+    :root[inFullscreen="true"] #sidebar-box:not([positionend]) {
       margin-inline-start: var(--uc-sidebar-fullscreen-margin) !important;
       will-change: margin-inline-start;
     }
-    :root[inFullscreen="true"] #sidebar-box:not([positionend="true"]):is(:hover, :focus-within) {
+    :root[inFullscreen="true"] #sidebar-box:not([positionend]):is(:hover, :focus-within) {
       margin-inline-start: 0 !important;
     }
-    :root[inFullscreen="true"] #sidebar-box[positionend="true"] {
+    :root[inFullscreen="true"] #sidebar-box[positionend] {
       margin-inline-end: var(--uc-sidebar-fullscreen-margin) !important;
       will-change: margin-inline-end;
     }
-    :root[inFullscreen="true"] #sidebar-box[positionend="true"]:is(:hover, :focus-within) {
+    :root[inFullscreen="true"] #sidebar-box[positionend]:is(:hover, :focus-within) {
       margin-inline-end: 0 !important;
     }
     @media (prefers-reduced-motion: no-preference) {
@@ -10853,7 +10861,7 @@
         transition: margin-inline-start var(--uc-autohide-fullscreen-sidebar-speed) var(--animation-easing-function)
           var(--uc-autohide-sidebar-delay) !important;
       }
-      :root[inFullscreen="true"] #sidebar-box[positionend="true"] {
+      :root[inFullscreen="true"] #sidebar-box[positionend] {
         transition-property: margin-inline-end !important;
       }
       :root[inFullscreen="true"] #sidebar-box:is(:hover, :focus-within),
@@ -11087,7 +11095,7 @@
     }
   }
   @supports selector(:has(a)) {
-    :root:has(#sidebar-box[positionend="true"]) {
+    :root:has(#sidebar-box[positionend]) {
       --uc-sidebar-icon: url("chrome://browser/skin/sidebars-right.svg");
       --uc-sidebar-icon-reverse: url("chrome://browser/skin/sidebars.svg");
     }
@@ -14856,8 +14864,12 @@
   /* Tab Bar */
   :root:is([tabsintitlebar], [customtitlebar]):not(:-moz-window-inactive):is(:not([lwtheme]), :not(:-moz-lwtheme))
     .titlebar-color,
+  :root:is([tabsintitlebar], [customtitlebar]):not(:-moz-window-inactive):is(:not([lwtheme]), :not(:-moz-lwtheme))
+    .browser-titlebar,
   :root:is([tabsintitlebar], [customtitlebar])[lwt-default-theme-in-dark-mode]:not(:-moz-window-inactive)
-    .titlebar-color {
+    .titlebar-color,
+  :root:is([tabsintitlebar], [customtitlebar])[lwt-default-theme-in-dark-mode]:not(:-moz-window-inactive)
+    .browser-titlebar {
     color: AccentColorText;
     background-color: AccentColor;
   }
@@ -14865,8 +14877,12 @@
 @media (-moz-bool-pref: "userChrome.theme.system_default") and (-moz-windows-accent-color-in-titlebar) and (-moz-bool-pref: "userChrome.compatibility.accent_color") {
   :root:is([tabsintitlebar], [customtitlebar]):not(:-moz-window-inactive):is(:not([lwtheme]), :not(:-moz-lwtheme))
     .titlebar-color,
+  :root:is([tabsintitlebar], [customtitlebar]):not(:-moz-window-inactive):is(:not([lwtheme]), :not(:-moz-lwtheme))
+    .browser-titlebar,
   :root:is([tabsintitlebar], [customtitlebar])[lwt-default-theme-in-dark-mode]:not(:-moz-window-inactive)
-    .titlebar-color {
+    .titlebar-color,
+  :root:is([tabsintitlebar], [customtitlebar])[lwt-default-theme-in-dark-mode]:not(:-moz-window-inactive)
+    .browser-titlebar {
     color: -moz-accent-color-foreground;
     background-color: -moz-accent-color;
   }
@@ -19839,7 +19855,7 @@
   :root[sizemode="maximized"]:is([tabsintitlebar], [customtitlebar]) #titlebar {
     appearance: none !important;
   }
-  .browser-toolbar:not(.titlebar-color) {
+  .browser-toolbar:not(.titlebar-color):not(.browser-titlebar) {
     background-clip: border-box !important;
   }
 }
@@ -20079,7 +20095,7 @@
   :root[sizemode="maximized"]:is([tabsintitlebar], [customtitlebar]) #titlebar {
     appearance: none !important;
   }
-  .browser-toolbar:not(.titlebar-color) {
+  .browser-toolbar:not(.titlebar-color):not(.browser-titlebar) {
     background-clip: border-box !important;
   }
 }
@@ -20286,7 +20302,7 @@
   :root[sizemode="maximized"]:is([tabsintitlebar], [customtitlebar]) #titlebar {
     appearance: none !important;
   }
-  .browser-toolbar:not(.titlebar-color) {
+  .browser-toolbar:not(.titlebar-color):not(.browser-titlebar) {
     background-clip: border-box !important;
   }
 }
@@ -20523,7 +20539,7 @@
   :root[sizemode="maximized"]:is([tabsintitlebar], [customtitlebar]) #titlebar {
     appearance: none !important;
   }
-  .browser-toolbar:not(.titlebar-color) {
+  .browser-toolbar:not(.titlebar-color):not(.browser-titlebar) {
     background-clip: border-box !important;
   }
 }
@@ -20763,7 +20779,7 @@
   :root[sizemode="maximized"]:is([tabsintitlebar], [customtitlebar]) #titlebar {
     appearance: none !important;
   }
-  .browser-toolbar:not(.titlebar-color) {
+  .browser-toolbar:not(.titlebar-color):not(.browser-titlebar) {
     background-clip: border-box !important;
   }
 }
@@ -20970,7 +20986,7 @@
   :root[sizemode="maximized"]:is([tabsintitlebar], [customtitlebar]) #titlebar {
     appearance: none !important;
   }
-  .browser-toolbar:not(.titlebar-color) {
+  .browser-toolbar:not(.titlebar-color):not(.browser-titlebar) {
     background-clip: border-box !important;
   }
 }
@@ -23696,7 +23712,7 @@
       opacity: 0;
       visibility: hidden;
     }
-    :root:has(#sidebar-box[positionend="true"]) #nav-bar {
+    :root:has(#sidebar-box[positionend]) #nav-bar {
       right: 0;
     }
   }
@@ -23762,7 +23778,7 @@
     position: absolute;
     height: 100%;
   }
-  :root[customizing="true"] #browser[collapsed="true"] #sidebar-box[positionend="true"] {
+  :root[customizing="true"] #browser[collapsed="true"] #sidebar-box[positionend] {
     right: 0;
   }
   :root[customizing="true"] #customization-container {
@@ -23777,12 +23793,12 @@
   }
 }
 @media (-moz-bool-pref: "userChrome.navbar.as_sidebar") {
-  :root[customizing="true"]:has(#sidebar-box:not([positionend="true"])) #customization-container {
+  :root[customizing="true"]:has(#sidebar-box:not([positionend])) #customization-container {
     margin-inline-start: var(--uc-sidebar-activate-width);
   }
 }
 @media (-moz-bool-pref: "userChrome.navbar.as_sidebar") {
-  :root[customizing="true"]:has(#sidebar-box[positionend="true"]) #customization-container {
+  :root[customizing="true"]:has(#sidebar-box[positionend]) #customization-container {
     margin-inline-end: var(--uc-sidebar-activate-width);
   }
 }
@@ -24120,7 +24136,7 @@
     position: relative !important;
     box-shadow: var(--uc-sidebar-shadow-position) 0px 15px -10px var(--uc-sidebar-shadow-color);
   }
-  #sidebar-box[positionend="true"] {
+  #sidebar-box[positionend] {
     --uc-sidebar-shadow-position: calc(-1 * var(--uc-sidebar-shadow-position-default));
   }
   #sidebar {
@@ -24131,7 +24147,7 @@
   }
 }
 @media (-moz-bool-pref: "userChrome.sidebar.overlap") {
-  #sidebar-box[positionend="true"] {
+  #sidebar-box[positionend] {
     direction: rtl;
   }
   #sidebar-header,
@@ -25966,18 +25982,18 @@
     min-width: var(--uc-sidebar-activate-width) !important;
     max-width: var(--uc-sidebar-activate-width) !important;
   }
-  :root[inFullscreen="true"] #sidebar-box:not([positionend="true"]) {
+  :root[inFullscreen="true"] #sidebar-box:not([positionend]) {
     margin-inline-start: var(--uc-sidebar-fullscreen-margin) !important;
     will-change: margin-inline-start;
   }
-  :root[inFullscreen="true"] #sidebar-box:not([positionend="true"]):is(:hover, :focus-within) {
+  :root[inFullscreen="true"] #sidebar-box:not([positionend]):is(:hover, :focus-within) {
     margin-inline-start: 0 !important;
   }
-  :root[inFullscreen="true"] #sidebar-box[positionend="true"] {
+  :root[inFullscreen="true"] #sidebar-box[positionend] {
     margin-inline-end: var(--uc-sidebar-fullscreen-margin) !important;
     will-change: margin-inline-end;
   }
-  :root[inFullscreen="true"] #sidebar-box[positionend="true"]:is(:hover, :focus-within) {
+  :root[inFullscreen="true"] #sidebar-box[positionend]:is(:hover, :focus-within) {
     margin-inline-end: 0 !important;
   }
 }
@@ -25995,7 +26011,7 @@
     transition: margin-inline-start var(--uc-autohide-fullscreen-sidebar-speed) var(--animation-easing-function)
       var(--uc-autohide-sidebar-delay) !important;
   }
-  :root[inFullscreen="true"] #sidebar-box[positionend="true"] {
+  :root[inFullscreen="true"] #sidebar-box[positionend] {
     transition-property: margin-inline-end !important;
   }
   :root[inFullscreen="true"] #sidebar-box:is(:hover, :focus-within),
@@ -26216,7 +26232,7 @@
 }
 @media not (-moz-bool-pref: "userChrome.icon.disabled") {
   @supports selector(:has(a)) {
-    :root:has(#sidebar-box[positionend="true"]) {
+    :root:has(#sidebar-box[positionend]) {
       --uc-sidebar-icon: url("chrome://browser/skin/sidebars-right.svg");
       --uc-sidebar-icon-reverse: url("chrome://browser/skin/sidebars.svg");
     }
