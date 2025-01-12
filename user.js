@@ -9,7 +9,10 @@ user_pref("svg.context-properties.content.enabled", true);
 user_pref("browser.compactmode.show", true);
 
 // about:home Search Bar - 89 Above
-user_pref("browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar", false);
+user_pref(
+	"browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar",
+	false,
+);
 
 // CSS's `:has()` selector #457 - 103 Above
 user_pref("layout.css.has-selector.enabled", true);
@@ -21,31 +24,31 @@ user_pref("layout.css.has-selector.enabled", true);
 // == Theme Distribution Settings ==============================================
 // The rows that are located continuously must be changed `true`/`false` explicitly because there is a collision.
 // https://github.com/black7375/Firefox-UI-Fix/wiki/Options#important
-user_pref("userChrome.tab.connect_to_window",          true); // Original, Photon
-user_pref("userChrome.tab.color_like_toolbar",         true); // Original, Photon
+user_pref("userChrome.tab.connect_to_window", true); // Original, Photon
+user_pref("userChrome.tab.color_like_toolbar", true); // Original, Photon
 
-user_pref("userChrome.tab.lepton_like_padding",        true); // Original
-user_pref("userChrome.tab.photon_like_padding",       false); // Photon
+user_pref("userChrome.tab.lepton_like_padding", true); // Original
+user_pref("userChrome.tab.photon_like_padding", false); // Photon
 
-user_pref("userChrome.tab.dynamic_separator",          true); // Original, Proton
-user_pref("userChrome.tab.static_separator",          false); // Photon
+user_pref("userChrome.tab.dynamic_separator", true); // Original, Proton
+user_pref("userChrome.tab.static_separator", false); // Photon
 user_pref("userChrome.tab.static_separator.selected_accent", false); // Just option
-user_pref("userChrome.tab.bar_separator",             false); // Just option
+user_pref("userChrome.tab.bar_separator", false); // Just option
 
-user_pref("userChrome.tab.newtab_button_like_tab",     true); // Original
-user_pref("userChrome.tab.newtab_button_smaller",     false); // Photon
-user_pref("userChrome.tab.newtab_button_proton",      false); // Proton
+user_pref("userChrome.tab.newtab_button_like_tab", true); // Original
+user_pref("userChrome.tab.newtab_button_smaller", false); // Photon
+user_pref("userChrome.tab.newtab_button_proton", false); // Proton
 
-user_pref("userChrome.icon.panel_full",                true); // Original, Proton
-user_pref("userChrome.icon.panel_photon",             false); // Photon
+user_pref("userChrome.icon.panel_full", true); // Original, Proton
+user_pref("userChrome.icon.panel_photon", false); // Photon
 
 // Original Only
-user_pref("userChrome.tab.box_shadow",                 true);
-user_pref("userChrome.tab.bottom_rounded_corner",      true);
+user_pref("userChrome.tab.box_shadow", true);
+user_pref("userChrome.tab.bottom_rounded_corner", true);
 
 // Photon Only
-user_pref("userChrome.tab.photon_like_contextline",   false);
-user_pref("userChrome.rounding.square_tab",           false);
+user_pref("userChrome.tab.photon_like_contextline", false);
+user_pref("userChrome.rounding.square_tab", false);
 
 // Proton Only
 // user_pref("userChrome.tab.supernova_like_contextline",   true);
@@ -107,7 +110,7 @@ user_pref("userChrome.rounding.square_tab",           false);
 // user_pref("userChrome.centered.tab",                        true);
 // user_pref("userChrome.centered.tab.label",                  true);
 // user_pref("userChrome.centered.urlbar",                     true);
-user_pref("userChrome.centered.bookmarkbar",                true);
+user_pref("userChrome.centered.bookmarkbar", true);
 
 // user_pref("userChrome.counter.tab",                         true);
 // user_pref("userChrome.counter.bookmark_menu",               true);
@@ -215,73 +218,73 @@ user_pref("userChrome.centered.bookmarkbar",                true);
 
 // == Theme Default Settings ===================================================
 // -- User Chrome --------------------------------------------------------------
-user_pref("userChrome.compatibility.theme",       true);
-user_pref("userChrome.compatibility.os",          true);
+user_pref("userChrome.compatibility.theme", true);
+user_pref("userChrome.compatibility.os", true);
 
-user_pref("userChrome.theme.built_in_contrast",   true);
-user_pref("userChrome.theme.system_default",      true);
-user_pref("userChrome.theme.proton_color",        true);
-user_pref("userChrome.theme.proton_chrome",       true); // Need proton_color
-user_pref("userChrome.theme.fully_color",         true); // Need proton_color
-user_pref("userChrome.theme.fully_dark",          true); // Need proton_color
+user_pref("userChrome.theme.built_in_contrast", true);
+user_pref("userChrome.theme.system_default", true);
+user_pref("userChrome.theme.proton_color", true);
+user_pref("userChrome.theme.proton_chrome", true); // Need proton_color
+user_pref("userChrome.theme.fully_color", true); // Need proton_color
+user_pref("userChrome.theme.fully_dark", true); // Need proton_color
 
-user_pref("userChrome.decoration.cursor",         true);
-user_pref("userChrome.decoration.field_border",   true);
+user_pref("userChrome.decoration.cursor", true);
+user_pref("userChrome.decoration.field_border", true);
 user_pref("userChrome.decoration.download_panel", true);
-user_pref("userChrome.decoration.animate",        true);
+user_pref("userChrome.decoration.animate", true);
 
-user_pref("userChrome.padding.tabbar_width",      true);
-user_pref("userChrome.padding.tabbar_height",     true);
-user_pref("userChrome.padding.toolbar_button",    true);
-user_pref("userChrome.padding.navbar_width",      true);
-user_pref("userChrome.padding.urlbar",            true);
-user_pref("userChrome.padding.bookmarkbar",       true);
-user_pref("userChrome.padding.infobar",           true);
-user_pref("userChrome.padding.menu",              true);
-user_pref("userChrome.padding.bookmark_menu",     true);
-user_pref("userChrome.padding.global_menubar",    true);
-user_pref("userChrome.padding.panel",             true);
-user_pref("userChrome.padding.popup_panel",       true);
+user_pref("userChrome.padding.tabbar_width", true);
+user_pref("userChrome.padding.tabbar_height", true);
+user_pref("userChrome.padding.toolbar_button", true);
+user_pref("userChrome.padding.navbar_width", true);
+user_pref("userChrome.padding.urlbar", true);
+user_pref("userChrome.padding.bookmarkbar", true);
+user_pref("userChrome.padding.infobar", true);
+user_pref("userChrome.padding.menu", true);
+user_pref("userChrome.padding.bookmark_menu", true);
+user_pref("userChrome.padding.global_menubar", true);
+user_pref("userChrome.padding.panel", true);
+user_pref("userChrome.padding.popup_panel", true);
 
-user_pref("userChrome.tab.multi_selected",        true);
-user_pref("userChrome.tab.unloaded",              true);
-user_pref("userChrome.tab.letters_cleary",        true);
+user_pref("userChrome.tab.multi_selected", true);
+user_pref("userChrome.tab.unloaded", true);
+user_pref("userChrome.tab.letters_cleary", true);
 user_pref("userChrome.tab.close_button_at_hover", true);
-user_pref("userChrome.tab.sound_hide_label",      true);
-user_pref("userChrome.tab.sound_with_favicons",   true);
-user_pref("userChrome.tab.pip",                   true);
-user_pref("userChrome.tab.container",             true);
-user_pref("userChrome.tab.crashed",               true);
+user_pref("userChrome.tab.sound_hide_label", true);
+user_pref("userChrome.tab.sound_with_favicons", true);
+user_pref("userChrome.tab.pip", true);
+user_pref("userChrome.tab.container", true);
+user_pref("userChrome.tab.crashed", true);
 
-user_pref("userChrome.fullscreen.overlap",        true);
+user_pref("userChrome.fullscreen.overlap", true);
 user_pref("userChrome.fullscreen.show_bookmarkbar", true);
 
-user_pref("userChrome.icon.library",              true);
-user_pref("userChrome.icon.panel",                true);
-user_pref("userChrome.icon.menu",                 true);
-user_pref("userChrome.icon.context_menu",         true);
-user_pref("userChrome.icon.global_menu",          true);
-user_pref("userChrome.icon.global_menubar",       true);
-user_pref("userChrome.icon.1-25px_stroke",        true);
+user_pref("userChrome.icon.library", true);
+user_pref("userChrome.icon.panel", true);
+user_pref("userChrome.icon.menu", true);
+user_pref("userChrome.icon.context_menu", true);
+user_pref("userChrome.icon.global_menu", true);
+user_pref("userChrome.icon.global_menubar", true);
+user_pref("userChrome.icon.1-25px_stroke", true);
 
 // -- User Content -------------------------------------------------------------
-user_pref("userContent.player.ui",             true);
-user_pref("userContent.player.icon",           true);
-user_pref("userContent.player.noaudio",        true);
-user_pref("userContent.player.size",           true);
-user_pref("userContent.player.click_to_play",  true);
-user_pref("userContent.player.animate",        true);
+user_pref("userContent.player.ui", true);
+user_pref("userContent.player.icon", true);
+user_pref("userContent.player.noaudio", true);
+user_pref("userContent.player.size", true);
+user_pref("userContent.player.click_to_play", true);
+user_pref("userContent.player.animate", true);
 
-user_pref("userContent.newTab.full_icon",      true);
-user_pref("userContent.newTab.animate",        true);
+user_pref("userContent.newTab.full_icon", true);
+user_pref("userContent.newTab.animate", true);
 user_pref("userContent.newTab.pocket_to_last", true);
-user_pref("userContent.newTab.searchbar",      true);
+user_pref("userContent.newTab.searchbar", true);
 
-user_pref("userContent.page.field_border",     true);
-user_pref("userContent.page.illustration",     true);
-user_pref("userContent.page.proton_color",     true);
-user_pref("userContent.page.dark_mode",        true); // Need proton_color
-user_pref("userContent.page.proton",           true); // Need proton_color
+user_pref("userContent.page.field_border", true);
+user_pref("userContent.page.illustration", true);
+user_pref("userContent.page.proton_color", true);
+user_pref("userContent.page.dark_mode", true); // Need proton_color
+user_pref("userContent.page.proton", true); // Need proton_color
 
 // ** Useful Options ***********************************************************
 // Tab preview
@@ -398,7 +401,51 @@ user_pref("dom.enable_web_task_scheduling", true);
 user_pref("dom.security.sanitizer.enabled", true);
 
 // Smoothfox(60hz+ display)
+user_pref("apz.allow_zooming", true); // [true]
+user_pref("apz.force_disable_desktop_zooming_scrollbars", false); // [false]
 user_pref("apz.overscroll.enabled", true); // DEFAULT NON-LINUX
+user_pref("apz.paint_skipping.enabled", true); // [true]
+user_pref("apz.windows.use_direct_manipulation", true); // [true]
+user_pref("dom.event.wheel-deltaMode-lines.always-disabled", false); // [false]
+user_pref("general.autoScroll", true);
 user_pref("general.smoothScroll", true); // DEFAULT
+user_pref("general.smoothScroll.currentVelocityWeighting", "1.0"); // ["0.25"]
+user_pref("general.smoothScroll.durationToIntervalRatio", 200); // [200]
+user_pref("general.smoothScroll.lines.durationMaxMS", 150); // [150]
+user_pref("general.smoothScroll.lines.durationMinMS", 150); // [150]
+user_pref("general.smoothScroll.mouseWheel.durationMaxMS", 200); // [200]
+user_pref("general.smoothScroll.mouseWheel.durationMinMS", 50); // [50]
+user_pref("general.smoothScroll.mouseWheel.migrationPercent", 100); //
+user_pref("general.smoothScroll.msdPhysics.continuousMotionMaxDeltaMS", 12); // [120] fling
+user_pref("general.smoothScroll.msdPhysics.enabled", true); // [false]
+user_pref("general.smoothScroll.msdPhysics.motionBeginSpringConstant", 550); // [1250]
+user_pref("general.smoothScroll.msdPhysics.regularSpringConstant", 600); // [1000]
+user_pref("general.smoothScroll.msdPhysics.slowdownMinDeltaMS", 25); // [12]
+user_pref("general.smoothScroll.msdPhysics.slowdownMinDeltaRatio", "1.5"); // [1.3]
+user_pref("general.smoothScroll.msdPhysics.slowdownMinDeltaRatio;0", 4); //
+user_pref("general.smoothScroll.msdPhysics.slowdownSpringConstant", 450); // [2000]
+user_pref("general.smoothScroll.other.durationMaxMS", 150); // [150]
+user_pref("general.smoothScroll.other.durationMinMS", 150); // [150]
+user_pref("general.smoothScroll.pages.durationMaxMS", 150); // [150]
+user_pref("general.smoothScroll.pages.durationMinMS", 150); // [150]
+user_pref("general.smoothScroll.pixels.durationMaxMS", 150); // [150]
+user_pref("general.smoothScroll.pixels.durationMinMS", 150); // [150]
+user_pref("general.smoothScroll.scrollbars.durationMaxMS", 150); // [150]
+user_pref("general.smoothScroll.scrollbars.durationMinMS", 150); // [150]
+user_pref("general.smoothScroll.stopDecelerationWeighting", "1.0"); // ["0.4"]
+user_pref("layers.async-pan-zoom.enabled", true); // [true]
+user_pref("layout.css.scroll-behavior.spring-constant", "250"); // [250]
+user_pref("mousewheel.acceleration.factor", 3); // [10]
+user_pref("mousewheel.acceleration.start", 0); // [-1]
+user_pref("mousewheel.default.delta_multiplier_x", 100); // [100]
+user_pref("mousewheel.default.delta_multiplier_y", 100); // [100]
 user_pref("mousewheel.default.delta_multiplier_y", 275); // 250-400; adjust this number to your liking
-user_pref("general.smoothScroll.msdPhysics.enabled", false); // [FF122+ Nightly]
+user_pref("mousewheel.default.delta_multiplier_z", 100); // [100]
+user_pref("mousewheel.min_line_scroll_amount", 5); // [5]
+user_pref("mousewheel.system_scroll_override.enabled", true); // [true]
+user_pref("mousewheel.system_scroll_override.horizontal.factor", 200); // [200]
+user_pref("mousewheel.system_scroll_override.vertical.factor", 200); // [200]
+user_pref("mousewheel.system_scroll_override_on_root_content.enabled", true); // [true]
+user_pref("mousewheel.transaction.timeout", 1500); // [1500]
+user_pref("toolkit.scrollbox.horizontalScrollDistance", 5); // [5]
+user_pref("toolkit.scrollbox.verticalScrollDistance", 3); // [3]
