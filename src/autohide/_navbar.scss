@@ -15,6 +15,15 @@
       opacity: 1;
     }
   }
+  // #1028
+  #navigator-toolbox:not(:hover, :focus-within) #nav-bar:not([customizing]) #urlbar {
+    pointer-events: none;
+  }
+}
+
+// Drag & Drop Event #820
+#mainPopupSet:not(:hover)~#navigator-toolbox:not(:hover, :focus-within) #nav-bar:not([customizing]) {
+  -moz-window-dragging: no-drag;
 }
 
 @include Animate {
