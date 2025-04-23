@@ -35,9 +35,9 @@ user_pref("userChrome.tab.static_separator", false); // Photon
 user_pref("userChrome.tab.static_separator.selected_accent", false); // Just option
 user_pref("userChrome.tab.bar_separator", false); // Just option
 
-user_pref("userChrome.tab.newtab_button_like_tab", true); // Original
+user_pref("userChrome.tab.newtab_button_like_tab", false); // Original
 user_pref("userChrome.tab.newtab_button_smaller", false); // Photon
-user_pref("userChrome.tab.newtab_button_proton", false); // Proton
+user_pref("userChrome.tab.newtab_button_proton", true); // Proton
 
 user_pref("userChrome.icon.panel_full", true); // Original, Proton
 user_pref("userChrome.icon.panel_photon", false); // Photon
