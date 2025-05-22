@@ -566,3 +566,40 @@
 	--firefoxcss-settings-wheel-color: hsla(240, 20%, 80%, 0.6) !important;
 	--firefoxcss-settings-wheel-color-hover: hsla(240, 20%, 80%, 0.9) !important;
 }
+
+/* Makes Hovering Over Inactive Tabs Have A Small Fade In */
+/* Thanks u/poorman3333 */
+.tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected="true"]) {
+	transition: 300ms !important;
+}
+
+/* Mimimum Size For Hovered Non-Selected Tabs */
+.tabbrowser-tab:not([pinned]):not([selected]):hover[fadein] {
+	max-width: 245px !important;
+}
+
+/* Make Selected Tabs Have A Minimum Size */
+.tabbrowser-tab[selected][fadein]:not([pinned]) {
+	min-width: 50px !important;
+}
+
+/* Tab Overflow          */
+/* On By Default         */
+/* Thanks u/-SZCMAWO     */
+.tabbrowser-tab {
+	min-width: 0px !important;
+}
+
+.tab-content {
+	overflow: hidden !important;
+}
+
+/* Close Tab Icon Fade Animation */
+/* On By Default                 */
+.tab-close-button,
+.tab-icon-overlay:-moz-any([soundplaying], [muted], [activemedia-blocked]),
+.tab-icon-sound {
+	transition-property: fill-opacity, background-color !important;
+	transition-duration: .15s !important;
+	transition-timing-function: var(--ease-basic) !important;
+}
