@@ -4483,11 +4483,13 @@
 }
 @media -moz-pref("userChrome.padding.urlView_expanding") or -moz-pref("userChrome.urlView.as_commandbar") {
   #urlbar[breakout][breakout-extend] {
-    top: calc((var(--urlbar-toolbar-height, var(--urlbar-container-height)) - var(--urlbar-height)) / 2) !important;
-    left: 0 !important;
-    width: 100% !important;
+    top: calc(var(--urlbar-container-height) * 2 - var(--urlbar-height)) !important;
+    width: var(--urlbar-width) !important;
+    position: relative !important;
+    margin: 0 !important;
   }
-  #urlbar[breakout][breakout-extend] > #urlbar-input-container {
+  #urlbar[breakout][breakout-extend] > #urlbar-input-container,
+  #urlbar[breakout][breakout-extend] > .urlbar-input-container {
     height: var(--urlbar-height) !important;
     padding-block: 0 !important;
     padding-inline: var(--urlbar-container-padding, 0px) !important;
@@ -12390,6 +12392,9 @@
       .menu-icon {
         display: unset !important;
       }
+      #main-menubar > menu > .menu-icon {
+        display: none !important;
+      }
     }
     /* Padding - Mac */
     @media -moz-pref("layout.css.osx-font-smoothing.enabled") {
@@ -18805,11 +18810,13 @@
 }
 @media (-moz-bool-pref: "userChrome.padding.urlView_expanding"), (-moz-bool-pref: "userChrome.urlView.as_commandbar") {
   #urlbar[breakout][breakout-extend] {
-    top: calc((var(--urlbar-toolbar-height, var(--urlbar-container-height)) - var(--urlbar-height)) / 2) !important;
-    left: 0 !important;
-    width: 100% !important;
+    top: calc(var(--urlbar-container-height) * 2 - var(--urlbar-height)) !important;
+    width: var(--urlbar-width) !important;
+    position: relative !important;
+    margin: 0 !important;
   }
-  #urlbar[breakout][breakout-extend] > #urlbar-input-container {
+  #urlbar[breakout][breakout-extend] > #urlbar-input-container,
+  #urlbar[breakout][breakout-extend] > .urlbar-input-container {
     height: var(--urlbar-height) !important;
     padding-block: 0 !important;
     padding-inline: var(--urlbar-container-padding, 0px) !important;
@@ -27929,6 +27936,9 @@
   }
   .menu-icon {
     display: unset !important;
+  }
+  #main-menubar > menu > .menu-icon {
+    display: none !important;
   }
 }
 @media (not (-moz-bool-pref: "userChrome.icon.disabled")) and (-moz-bool-pref: "userChrome.icon.menu") and (-moz-bool-pref: "layout.css.osx-font-smoothing.enabled") {
