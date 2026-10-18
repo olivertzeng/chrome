@@ -1,0 +1,8 @@
+/* ==========================================================================
+   Feature: Clean UI - Hide Reader Mode & Floorp PWA Install Buttons
+   ========================================================================== */
+
+/* Hide Firefox Reader Mode toggle */
+#reader-mode-button {
+    display: none !important;
+}

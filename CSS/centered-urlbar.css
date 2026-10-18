@@ -1,0 +1,27 @@
+/* ==========================================================================
+   Feature: Centered URL Bar Text (Inactive State Only) & Focus Aura
+   ========================================================================== */
+
+/* Center URL text strictly when inactive (not focused, not typing, not selecting) */
+#urlbar:not([focused="true"]):not([breakout-extend="true"]):not([open]) .urlbar-input:not(:focus):not(:focus-within) {
+    text-align: center !important;
+}
+
+/* Snap back to standard left alignment as soon as any interaction occurs */
+#urlbar[focused="true"] .urlbar-input,
+#urlbar[breakout-extend="true"] .urlbar-input,
+#urlbar[open] .urlbar-input,
+#urlbar .urlbar-input:focus,
+#urlbar .urlbar-input:focus-within {
+    text-align: start !important;
+}
+
+/* Focus glow outline on address bar */
+#urlbar-background {
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease !important;
+}
+
+#urlbar[focused="true"]>#urlbar-background {
+    border: 1px solid var(--gruv-urlbar-focus-border) !important;
+    box-shadow: 0 0 14px var(--gruv-urlbar-focus-glow) !important;
+}

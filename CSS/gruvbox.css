@@ -1,0 +1,86 @@
+/* ==========================================================================
+   Feature: Gruvbox Material Palette & Solid Opaque Popups
+   ========================================================================== */
+
+:root {
+    /* Accent Colors */
+    --gruv-red: #ea6962;
+    --gruv-orange: #e78a4e;
+    --gruv-yellow: #d79921;
+    --gruv-green: #a9b665;
+    --gruv-aqua: #89b482;
+    --gruv-blue: #7daea3;
+    --gruv-purple: #d3869b;
+
+    /* Light Theme (Gruvbox Light) */
+    --gruv-bg0: #fbf1c7;
+    --gruv-bg1: #f2e5bc;
+    --gruv-bg2: #ebdbb2;
+    --gruv-bg3: #d5c4a1;
+    --gruv-bg4: #bdae93;
+
+    --gruv-fg0: #282828;
+    --gruv-fg: #3c3836;
+    --gruv-fg-dim: #7c6f64;
+
+    --gruv-panel-bg: #fbf1c7;
+    --gruv-panel-border: #d5c4a1;
+    --gruv-item-hover: #ebdbb2;
+    --gruv-urlbar-focus-border: #b57614;
+    --gruv-urlbar-focus-glow: rgba(181, 118, 20, 0.28);
+    --gruv-tab-hover-bg: rgba(0, 0, 0, 0.05);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Dark Theme (Gruvbox Dark) */
+        --gruv-bg0: #282828;
+        --gruv-bg1: #32302f;
+        --gruv-bg2: #3c3836;
+        --gruv-bg3: #45403d;
+        --gruv-bg4: #504945;
+
+        --gruv-fg0: #fbf1c7;
+        --gruv-fg: #dfbf8e;
+        --gruv-fg-dim: #a89984;
+
+        --gruv-panel-bg: #282828;
+        --gruv-panel-border: #45403d;
+        --gruv-item-hover: #3c3836;
+        --gruv-urlbar-focus-border: #d79921;
+        --gruv-urlbar-focus-glow: rgba(215, 153, 33, 0.35);
+        --gruv-tab-hover-bg: rgba(255, 255, 255, 0.05);
+    }
+}
+
+/* Solid Gruvbox Popups & Context Menus */
+menupopup,
+panel[type="arrow"] {
+    --panel-background: var(--gruv-panel-bg) !important;
+    --panel-border-color: var(--gruv-panel-border) !important;
+    --panel-color: var(--gruv-fg0) !important;
+}
+
+.menupopup-arrowscrollbox,
+.panel-arrowcontent {
+    background-color: var(--gruv-panel-bg) !important;
+    border: 1px solid var(--gruv-panel-border) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35) !important;
+    color: var(--gruv-fg0) !important;
+}
+
+menupopup>menu,
+menupopup>menuitem {
+    background-color: transparent !important;
+    color: var(--gruv-fg0) !important;
+}
+
+menupopup>menu:hover,
+menupopup>menuitem:hover,
+menupopup>menu[_moz-menuactive="true"],
+menupopup>menuitem[_moz-menuactive="true"] {
+    background-color: var(--gruv-item-hover) !important;
+    color: var(--gruv-yellow) !important;
+    border-radius: 5px !important;
+}

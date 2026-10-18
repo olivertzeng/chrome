@@ -1,0 +1,13 @@
+/* ==========================================================================
+   Feature: Centered Bookmarks Toolbar
+   ========================================================================== */
+
+#PlacesToolbarItems {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+}
+
+#PersonalToolbar #PlacesChevron {
+    display: none !important;
+}
